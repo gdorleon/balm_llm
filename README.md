@@ -1,6 +1,6 @@
 ## BALM: Bias-Aware Generation for Large Language Models
 
-This repository contains a reference implementation of **BALM** (Bias-Aware Language Model) and the full experimental pipeline used in the paper.
+This repository contains the full experimental pipeline used in the paper **BALM** (Bias-Aware Language Model) 
 It includes:
 - A constructed bias testbed with **400 biased prompts** across four categories, plus **200 neutral** and **50 near-neutral** controls.
 - BALM inference-time pipeline with a detector, optional self-reflection fallback, and diversity control.
