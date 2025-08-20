@@ -4,7 +4,7 @@ This repository contains the full experimental pipeline used in the paper **BALM
 It includes:
 - A constructed bias testbed with **400 biased prompts** across four categories, plus **200 neutral** and **50 near-neutral** controls.
 - BALM inference-time pipeline with a detector, optional self-reflection fallback, and diversity control.
-- Adapters for several model providers: OpenAI GPT-3.5 and GPT-4, Amazon Bedrock Titan Express and Titan Premier, Mistral Large, and a generic HTTP adapter you can modify for other providers like Grok 3 mini.
+- Adapters for several model providers: OpenAI GPT-3.5 and GPT-4, Amazon Bedrock Titan Express and Titan Premier, Mistral Large, and a generic HTTP adapter that can be modified for other providers like Grok 3 mini.
 - Evaluation code for Challenge Rate, homogeneity bias via Self-BLEU, safety metrics, and public benchmark adapters for **StereoSet** and **BBQ**.
 
 > Note that this repo does not ship vendor model weights, obviously. You need API access for the providers you choose to evaluate.
