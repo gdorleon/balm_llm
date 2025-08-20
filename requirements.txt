@@ -1,0 +1,15 @@
+numpy
+pandas
+scikit-learn
+sacrebleu
+nltk
+datasets
+pyyaml
+tqdm
+joblib
+openai>=1.0.0
+boto3
+mistralai
+requests
+matplotlib
+sentence-transformers

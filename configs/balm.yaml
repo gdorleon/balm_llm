@@ -1,0 +1,13 @@
+seed: 7
+probe_tokens: 32
+tau_low: 0.4
+tau_high: 0.6
+k_candidates: 3
+gamma_base: 0.85
+gamma_bias: 0.80
+temperature_base: 0.7
+top_p_base: 0.95
+temperature_bias: 0.8
+repetition_penalty_base: 1.0
+repetition_penalty_bias: 1.1
+max_new_tokens: 256

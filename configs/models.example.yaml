@@ -1,0 +1,15 @@
+openai:
+  api_key: "$OPENAI_API_KEY"
+  gpt35: "gpt-3.5-turbo"
+  gpt4: "gpt-4o"  # or gpt-4o-mini if preferred
+bedrock:
+  region: "us-east-1"
+  titan_express: "amazon.titan-text-express-v1"
+  titan_premier: "amazon.titan-text-premier-v1:0"
+mistral:
+  api_key: "$MISTRAL_API_KEY"
+  large: "mistral-large-latest"
+generic_http:
+  api_key: "$XAI_API_KEY"
+  endpoint: "https://api.x.ai/v1/chat/completions"  # change to your provider endpoint
+  model: "grok-3-mini"
