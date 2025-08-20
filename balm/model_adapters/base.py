@@ -1,3 +1,4 @@
+## @gg
 from abc import ABC, abstractmethod
 from typing import Optional, List
 
@@ -12,4 +13,18 @@ class ModelAdapter(ABC):
         stop: Optional[List[str]] = None,
         repetition_penalty: float = 1.0,
     ) -> str:
+        """
+        Abstract method to generate text from a prompt.
+
+        Args:
+            prompt: Input text prompt to condition generation.
+            max_new_tokens: Max number of tokens to generate.
+            temperature: Controls randomness; lower is more deterministic.
+            top_p: Nucleus sampling threshold for diversity.
+            stop: Optional list of strings where generation should stop.
+            repetition_penalty: Penalizes repeated tokens to reduce loops.
+
+        Returns:
+            Generated text string.
+        """
         ...
