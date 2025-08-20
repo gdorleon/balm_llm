@@ -1,5 +1,5 @@
 numpy
-pandas
+pandas>=1.3
 scikit-learn
 sacrebleu
 nltk
@@ -13,3 +13,4 @@ mistralai
 requests
 matplotlib
 sentence-transformers
+
