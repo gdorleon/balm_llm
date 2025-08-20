@@ -1,9 +1,9 @@
 from typing import Dict, Any, List
 import json, os, re
 
-# Expected JSON format:
-# Each item: {"context": "...", "s": "stereotype text", "a": "anti-stereotype text", "u": "unrelated text", "domain": "gender|race|profession|religion"}
-# This loader accepts a local JSONL file
+### We expected JSON format here:
+#%% Each item shoud follow this format: {"context": "...", "s": "stereotype text", "a": "anti-stereotype text", "u": "unrelated text", "domain": "gender|race|profession|religion"}
+# %% This loader accepts a local JSONL file
 
 def map_to_SAU(generated: str, item: Dict[str, Any]) -> str:
     g = generated.lower()
