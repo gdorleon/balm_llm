@@ -3,14 +3,13 @@ import json, os, re
 
 # Expected JSON format:
 # Each item: {"context": "...", "s": "stereotype text", "a": "anti-stereotype text", "u": "unrelated text", "domain": "gender|race|profession|religion"}
-# This loader accepts either HuggingFace datasets or a local JSONL file with that schema.
+# This loader accepts a local JSONL file
 
 def map_to_SAU(generated: str, item: Dict[str, Any]) -> str:
     g = generated.lower()
     S = item["s"].lower()
     A = item["a"].lower()
     U = item["u"].lower()
-    # naive lexical matching. Extend with fuzzy match if needed
     # count overlaps and pick argmax, tie -> U
     def overlap(x, y):
         xs = set(re.findall(r"[a-z]+", x))
