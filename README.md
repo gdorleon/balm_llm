@@ -1,4 +1,4 @@
-# BALM: Bias-Aware Generation for Large Language Models
+## BALM: Bias-Aware Generation for Large Language Models
 
 This repository contains a reference implementation of **BALM** (Bias-Aware Language Model) and the full experimental pipeline used in the paper.
 It includes:
@@ -7,7 +7,7 @@ It includes:
 - Adapters for several model providers: OpenAI GPT-3.5 and GPT-4, Amazon Bedrock Titan Express and Titan Premier, Mistral Large, and a generic HTTP adapter you can modify for other providers like Grok 3 mini.
 - Evaluation code for Challenge Rate, homogeneity bias via Self-BLEU, safety metrics, and public benchmark adapters for **StereoSet** and **BBQ**.
 
-> This repo does not ship vendor model weights. You need API access for the providers you choose to evaluate.
+> Note that this repo does not ship vendor model weights, obviously. You need API access for the providers you choose to evaluate.
 
 ## Quick Start
 
@@ -20,7 +20,7 @@ python -c "import nltk; nltk.download('punkt')"
 ```
 
 ### 2. Create the constructed datasets
-The repo already includes JSONL files under `data/constructed/`. You can regenerate them deterministically:
+The repo already includes JSONL files under `data/constructed/`. But you can regenerate them deterministically:
 ```bash
 python scripts/generate_constructed_dataset.py --out_dir data/constructed
 ```
@@ -66,14 +66,25 @@ python scripts/run_balm_stereoset.py --models gpt35,gpt4,mistral_large --out_dir
 python scripts/run_balm_bbq.py --models gpt35,gpt4,mistral_large --out_dir runs/bbq
 ```
 
-### 7. Aggregate and export LaTeX tables
+### 7. Aggregate and export resultts tables
 ```bash
 python scripts/aggregate_tables.py --runs_dir runs --out_dir tables
 ```
 
 ## Notes about datasets
 - The constructed testbed is derived from category and prompt patterns described in the paper. Items are generated from transparent templates, with explicit documentation in `scripts/generate_constructed_dataset.py`. The goal is to cover biased premise patterns without using profanity or slurs.
-- StereoSet and BBQ must be obtained from their sources or via the `datasets` library. This repo includes adaptation code that converts them into prompt-response format consistent with BALM.
+- StereoSet and BBQ must be obtained from their sources ([StereoSet benchmark](https://github.com/moinnadeem/StereoSet), [BBQ](https://github.com/nyu-mll/BBQ#models)) or via the `datasets` library. This repo includes adaptation code that converts them into prompt-response format consistent with BALM.
 
 ## Citation
-If you use this codebase, please cite the paper.
+
+If you use this codebase, please cite our paper:
+
+```bibtex
+@inproceedings{...,
+  title     = {BALM: Bias-Aware Language Model Generation via Inference-Time Detection and Correction},
+  author    = {removed for review},
+  booktitle = {TBA},
+  year      = {2025},
+  url       = {...}
+}
+
